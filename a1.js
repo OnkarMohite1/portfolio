@@ -1,89 +1,90 @@
 // ===============================
-// Mobile Navigation
+// Page Switching (hash-based SPA)
 // ===============================
+const pages = document.querySelectorAll(".page");
+const navLinkEls = document.querySelectorAll("[data-link]");
 
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+function showPage(pageName) {
+  const target = document.getElementById("page-" + pageName);
+  if (!target) return;
 
-// Toggle mobile menu
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
+  pages.forEach(p => p.classList.remove("active"));
+  target.classList.add("active");
 
-// Close menu when a nav link is clicked
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
+  navLinkEls.forEach(link => {
+    link.classList.toggle("active", link.dataset.page === pageName);
+  });
 
-// ===============================
-// Contact Form
-// ===============================
-
-const form = document.getElementById("contactForm");
-const status = document.getElementById("status");
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const data = {
-        name: name.value,
-        email: email.value,
-        message: message.value
-    };
-
-    try {
-        const res = await fetch("http://localhost:5000/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        const result = await res.json();
-
-        status.style.color = "#22c55e";
-        status.innerHTML = result.message;
-
-        form.reset();
-
-    } catch {
-        status.style.color = "#ef4444";
-        status.innerHTML = "Backend not connected yet.";
-    }
-});
-
-// ===============================
-// Scroll Reveal Animation
-// ===============================
-
-const cards = document.querySelectorAll(
-    ".project-card, .skill, .glass-card"
-);
-
-// Initial hidden state
-cards.forEach(card => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "all 0.6s ease";
-});
-
-// Reveal when scrolling
-function revealCards() {
-    cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 80) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }
-    });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Run on page load
-window.addEventListener("load", revealCards);
+navLinkEls.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const pageName = link.dataset.page;
+    history.pushState(null, "", "#" + pageName);
+    showPage(pageName);
+    navLinks.classList.remove("active-menu");
+  });
+});
 
-// Run while scrolling
-window.addEventListener("scroll", revealCards);
+window.addEventListener("popstate", () => {
+  const pageName = (location.hash || "#home").replace("#", "");
+  showPage(pageName);
+});
+
+// Load the correct page on first visit (supports direct links like file.html#projects)
+const initialPage = (location.hash || "#home").replace("#", "");
+showPage(initialPage);
+
+// ===============================
+// Mobile Navigation
+// ===============================
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active-menu");
+  });
+}
+
+// ===============================
+// Typing Animation
+// ===============================
+const typingElement = document.getElementById("typing");
+
+const words = [
+  "AI & Data Science Student",
+  "Machine Learning Enthusiast",
+  "Future AI Engineer"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+  if (!typingElement) return;
+
+  const currentWord = words[wordIndex];
+
+  if (!deleting) {
+    typingElement.textContent = currentWord.substring(0, charIndex++);
+    if (charIndex > currentWord.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+  } else {
+    typingElement.textContent = currentWord.substring(0, charIndex--);
+    if (charIndex < 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 50 : 90);
+}
+
+typeEffect();
