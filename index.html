@@ -3,195 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Onkar Mohite | AI & Data Science</title>
-
-<link rel="stylesheet" href="a1.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Onkar Mohite | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="x.css">
 </head>
-
 <body>
 
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo" data-link data-page="home">Onkar<span>.</span></a>
 
-<nav>
-    <div class="logo">Onkar Mohite</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-link data-page="home" class="active">Home</a>
+      <a href="#about" data-link data-page="about">About</a>
+      <a href="#skills" data-link data-page="skills">Skills</a>
+      <a href="#projects" data-link data-page="projects">Projects</a>
+      <a href="#contact" data-link data-page="contact">Contact</a>
+    </nav>
 
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="resume.pdf" class="resume-btn" target="_blank">Resume</a>
 
-    <div class="menu-btn"><i class="fas fa-bars"></i></div>
-</nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
-<section class="hero" id="home">
+<!-- ============ HOME PAGE ============ -->
+<main id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+      <div class="hero-text">
+      <span class="chip">Welcome to my portfolio</span>
+      <h1 class="hero-name">Onkar Mohite.</h1>
 
-<div class="hero-left">
+<h2 class="hero-heading">
+  Driven by Data,<br>
+  Powered by AI.
+</h2>
+    
+      <p class="hero-typed"><span id="typing"></span><span class="cursor">|</span></p>
+      <p class="hero-desc">Final-year B.Tech student in AI &amp; Data Science, building machine learning, cloud and automation projects that solve real problems.</p>
 
-<div class="status">💼 Available for AI, ML & Data Science Opportunities</div>
+      <div class="hero-actions">
+        <a href="#projects" data-link data-page="projects" class="btn-primary">View My Work</a>
+        <a href="#contact" data-link data-page="contact" class="btn-outline">Get In Touch</a>
+      </div>
 
-<h1>Driven By Data,<span>Powered By AI</span></h1>
+      <div class="hero-social">
+        <a href="https://github.com/OnkarMohite1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/onkar-mohite-a5875a281" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/omkarmohite_07" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      </div>
+      <div class="hero-image"><img src="myphoto.jpeg" alt="Onkar Mohite"></div>
+      </div>
+    </div>
+  </section>
 
-<h2>👋 Hi, I'm <span>Onkar Mohite</span></h2>
+  <section class="section quick-links">
+    <div class="section-head">
+      <h2>Explore</h2>
+      <span class="rule"></span>
+    </div>
 
-<h3>AI & Data Science Student • Machine Learning Enthusiast • Future AI Engineer</h3>
+    <div class="quick-grid">
+      <a href="#about" data-link data-page="about" class="quick-card">
+        <i class="fa-solid fa-user"></i>
+        <h3>About</h3>
+        <p>Who I am and what I'm working toward.</p>
+      </a>
+      <a href="#skills" data-link data-page="skills" class="quick-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Skills</h3>
+        <p>Languages, web tech, AI &amp; tools I use.</p>
+      </a>
+      <a href="#projects" data-link data-page="projects" class="quick-card">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h3>Projects</h3>
+        <p>What I've built, end to end.</p>
+      </a>
+      <a href="#contact" data-link data-page="contact" class="quick-card">
+        <i class="fa-solid fa-paper-plane"></i>
+        <h3>Contact</h3>
+        <p>Let's talk about an opportunity.</p>
+      </a>
+    </div>
+  </section>
+</main>
 
-<p>
-Passionate about Artificial Intelligence, Machine Learning,
-Data Analytics and Software Development. I enjoy building
-intelligent solutions that solve real-world problems.
-</p>
+<!-- ============ ABOUT PAGE ============ -->
+<main id="page-about" class="page">
+  <section class="page-banner">
+    <div class="page-banner-inner">
+      <span class="chip">Get to know me</span>
+      <h1>About Me</h1>
+    </div>
+  </section>
 
-<div class="hero-btns">
-    <a href="resume.pdf" download class="primary-btn"><i class="fas fa-download"></i> Resume</a>
-    <a href="#projects" class="secondary-btn"><i class="fas fa-code"></i> Projects</a>
-    <a href="https://github.com/OnkarMohite1" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/onkar-mohite-a5875a281" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="#contact" class="third-btn"><i class="fas fa-paper-plane"></i> Contact</a>
-</div>
+  <section class="section">
+    <div class="panel bio-panel">
+      <p class="about-text">
+        I'm <strong>Onkar Mohite</strong>, a final-year B.Tech student specializing in
+        <span class="highlight">Artificial Intelligence &amp; Data Science</span>.
+        I enjoy building AI, machine learning, data analytics and web development
+        projects that solve real-world problems.
+      </p>
+      <p class="about-text">
+        My goal is to become an AI Engineer by creating practical projects,
+        sharpening my problem-solving skills and continuously learning modern
+        technologies.
+      </p>
 
-<div class="stats">
-<div><h2>10+</h2><p>Projects</p></div>
-<div><h2>15+</h2><p>Skills</p></div>
-<div><h2>5+</h2><p>Certifications</p></div>
-</div>
+      <div class="stat-row">
+        <div class="stat-box"><h3>10+</h3><span>Projects</span></div>
+        <div class="stat-box"><h3>15+</h3><span>Skills</span></div>
+        <div class="stat-box"><h3>5+</h3><span>Certificates</span></div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section class="section" style="padding-top:0;">
+    <div class="section-head">
+      <h2>Experience &amp; Education</h2>
+      <span class="rule"></span>
+    </div>
 
-<div class="hero-right">
-<div class="profile-card">
-<img src="myphoto.jpeg" alt="Profile">
-</div>
-</div>
+    <div class="panel">
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="dot-marker"></span>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 &ndash; 2026</span>
+            <h3>B.Tech, AI &amp; Data Science</h3>
+            <p>Final-year student specializing in Artificial Intelligence &amp; Data Science, focused on machine learning, data analytics and applied software projects.</p>
+          </div>
+        </div>
 
-</section>
+        <div class="timeline-item">
+          <span class="dot-marker"></span>
+          <div class="timeline-content">
+            <span class="timeline-date">Ongoing</span>
+            <h3>Independent Projects</h3>
+            <p>Building AI, machine learning, cloud and automation tools &mdash; from data-cleaning pipelines to security and accessibility utilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-<section id="about">
-<h2 class="section-title">About Me</h2>
-<div class="glass-card">
-<p>
-I am a B.Tech Artificial Intelligence and Data Science student
-with strong interests in Machine Learning, Data Analytics,
-Web Development and Problem Solving.
-I enjoy building real-world applications that combine
-creativity, technology and intelligence.
-</p>
-</div>
-</section>
+<!-- ============ SKILLS PAGE ============ -->
+<main id="page-skills" class="page">
+  <section class="page-banner">
+    <div class="page-banner-inner">
+      <span class="chip">What I work with</span>
+      <h1>Technical Skills</h1>
+    </div>
+  </section>
 
-<section id="skills">
-<h2 class="section-title">Skills</h2>
-<div class="skills-grid">
-<div class="skill">Python</div>
-<div class="skill">Java</div>
-<div class="skill">C++</div>
-<div class="skill">SQL</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Machine Learning</div>
-<div class="skill">Deep Learning</div>
-<div class="skill">Data Analytics</div>
-<div class="skill">GitHub</div>
-</div>
-</section>
+  <section class="section">
+    <div class="skills-grid">
 
-<section id="projects">
-<h2 class="section-title">Projects</h2>
-<div class="project-grid">
+      <div class="panel skill-block">
+        <span class="group-label">Languages</span>
+        <div class="tag-row">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">C++</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>Data Cleaning Automation</h3>
-<p>Built a Python-based automation system that handles missing values, removes duplicates, and standardizes data for analytics and machine learning.</p>
-</div>
+      <div class="panel skill-block">
+        <span class="group-label">Web Tech</span>
+        <div class="tag-row">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>Steganography Detection</h3>
-<p>Detects hidden information embedded inside images using image analysis techniques.</p>
-</div>
+      <div class="panel skill-block">
+        <span class="group-label">Data &amp; AI</span>
+        <div class="tag-row">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Data Analytics</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>Portfolio Website</h3>
-<p>Modern responsive personal portfolio with mobile-friendly design.</p>
-</div>
+      <div class="panel skill-block">
+        <span class="group-label">Tools</span>
+        <div class="tag-row">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">GitHub</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>Phishing Detection</h3>
-<p>Detects and prevents fake websites using machine learning.</p>
-</div>
+    </div>
+  </section>
+</main>
 
-<div class="project-card">
-<h3>PDF to Speech Converter</h3>
-<p>Extracts text from PDF files and converts it into spoken audio.</p>
-</div>
+<!-- ============ PROJECTS PAGE ============ -->
+<main id="page-projects" class="page">
+  <section class="page-banner">
+    <div class="page-banner-inner">
+      <span class="chip">What I've built</span>
+      <h1>Featured Projects</h1>
+    </div>
+  </section>
 
-</div>
-</section>
+  <section class="section">
+    <div class="project-grid">
 
-<section id="contact">
-<h2 class="section-title">Let's <span class="connect-accent">Connect</span></h2>
+      <article class="project-card">
+        <div class="project-cover cover-teal"><i class="fa-solid fa-broom"></i></div>
+        <div class="project-body">
+          <h3>Data Cleaning Automation</h3>
+          <p>A Python system that automatically handles missing values, removes duplicates and prepares raw datasets for analytics and machine learning.</p>
+          <div class="tags">
+            <span>Python</span><span>Pandas</span><span>Automation</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/OnkarMohite1/Data-Cleaning-Automation" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/OnkarMohite1" target="_blank" class="demo-link">View Code</a>
+        </div>
+      </article>
 
-<div class="contact-wrapper">
+      <article class="project-card">
+        <div class="project-cover cover-navy"><i class="fa-solid fa-eye-slash"></i></div>
+        <div class="project-body">
+          <h3>Steganography Detection</h3>
+          <p>A detection system that identifies hidden information embedded inside digital images using image-analysis techniques.</p>
+          <div class="tags">
+            <span>Python</span><span>OpenCV</span><span>ML</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/OnkarMohite1" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/OnkarMohite1" target="_blank" class="demo-link">View Code</a>
+        </div>
+      </article>
 
-<p class="contact-intro">
-Open to internships, freelance work and exciting conversations.
-Feel free to connect with me.
-</p>
+      <article class="project-card">
+        <div class="project-cover cover-teal"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="project-body">
+          <h3>Phishing Detection</h3>
+          <p>Detects and flags fake or malicious websites using intelligent, feature-based detection techniques.</p>
+          <div class="tags">
+            <span>Python</span><span>ML</span><span>Security</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/OnkarMohite1/Phishing-Detection" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/OnkarMohite1" target="_blank" class="demo-link">View Code</a>
+        </div>
+      </article>
 
-<a href="mailto:omkarvitthalmohite@gmail.com" class="contact-card">
-<div class="contact-icon email"><i class="fas fa-envelope"></i></div>
-<div><p class="contact-label">EMAIL</p><h3>omkarvitthalmohite@gmail.com</h3></div>
-</a>
+      <article class="project-card">
+        <div class="project-cover cover-navy"><i class="fa-solid fa-volume-high"></i></div>
+        <div class="project-body">
+          <h3>PDF Text-to-Speech Converter</h3>
+          <p>Extracts text from PDF files and converts it into natural spoken audio for easier, hands-free reading.</p>
+          <div class="tags">
+            <span>Python</span><span>NLP</span><span>Automation</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/OnkarMohite1/Pdf-text-to-speech" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/OnkarMohite1" target="_blank" class="demo-link">View Code</a>
+        </div>
+      </article>
 
-<a href="https://instagram.com/omkarmohite_07" target="_blank" class="contact-card">
-<div class="contact-icon instagram"><i class="fab fa-instagram"></i></div>
-<div><p class="contact-label">INSTAGRAM</p><h3>@omkarmohite_07</h3></div>
-</a>
+      <article class="project-card">
+        <div class="project-cover cover-teal"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="project-body">
+          <h3>Portfolio Website</h3>
+          <p>This site: a fully responsive personal portfolio designed, built and hosted on GitHub Pages.</p>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/OnkarMohite1/portfolio" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/OnkarMohite1" target="_blank" class="demo-link">View Code</a>
+        </div>
+      </article>
 
-<a href="https://github.com/OnkarMohite1" target="_blank" class="contact-card">
-<div class="contact-icon github"><i class="fab fa-github"></i></div>
-<div><p class="contact-label">GITHUB</p><h3>github.com/OnkarMohite1</h3></div>
-</a>
+    </div>
+  </section>
+</main>
 
-<a href="https://www.linkedin.com/in/onkar-mohite-a5875a281" target="_blank" class="contact-card">
-<div class="contact-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
-<div><p class="contact-label">LINKEDIN</p><h3>linkedin.com/in/onkar-mohite-a5875a281</h3></div>
-</a>
+<!-- ============ CONTACT PAGE ============ -->
+<main id="page-contact" class="page">
+  <section class="page-banner">
+    <div class="page-banner-inner">
+      <span class="chip">Let's talk</span>
+      <h1>Get In Touch</h1>
+    </div>
+  </section>
 
-<form id="contactForm" class="contact-form">
-<label>YOUR NAME</label>
-<input id="name" type="text" placeholder="Enter your name" required>
+  <section class="section contact-section">
+    <p class="contact-intro">Open to opportunities, collaborations and internships &mdash; reach out through any of the channels below.</p>
 
-<label>YOUR EMAIL</label>
-<input id="email" type="email" placeholder="Enter your email" required>
-
-<label>MESSAGE</label>
-<textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
-
-<button type="submit" class="contact-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-
-<p id="status"></p>
-
-</form>
-
-</div>
-</section>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:omkarvitthalmohite@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a class="contact-card" href="https://github.com/OnkarMohite1" target="_blank">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/onkar-mohite-a5875a281" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a class="contact-card" href="https://instagram.com/omkarmohite_07" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer>
-<p>© 2026 Onkar Mohite</p>
-<div class="socials">
-<a href="https://github.com/OnkarMohite1"><i class="fab fa-github"></i></a>
-<a href="https://www.linkedin.com/in/onkar-mohite-a5875a281"><i class="fab fa-linkedin"></i></a>
-<a href="https://instagram.com/omkarmohite_07"><i class="fab fa-instagram"></i></a>
-</div>
+  <p>&copy; 2026 Onkar Mohite. All rights reserved.</p>
 </footer>
 
-<script src="a1.js"></script>
-
+<script src="x.js"></script>
 </body>
 </html>
+            
